@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "l3-fastapi-osmthome-backend"
+version = "0.1.0"
+description = "OSMTHOME BACKEND"
+authors = ["KamruzzamanAsif <asif720kamruzzaman@gmail.com>"]
+readme = "README.md"
+packages = [{include = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.110.0"
+uvicorn = {extras = ["standard"], version = "^0.28.0"}
+
+[tool.poetry.scripts]
+app = "src.main:start"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
