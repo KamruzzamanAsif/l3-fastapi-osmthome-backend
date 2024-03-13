@@ -6,23 +6,23 @@ This project is setup with Python Packaging and Dependency Manager [Poetry](http
 
 <br/>
 
-### Setp 1: Install Poetry
+### Step 1: Install Poetry
 ```pip install poetry```
 
-### Setp 2: Poetry Configurations
+### Step 2: Poetry Configurations
 ```poetry config virtualenvs.in-project true```
 
-### Setp 3: Install Project Dependencies
+### Step 3: Install Project Dependencies
 ```poetry install```
 
-### Setp 4: Setup Precommit with git
+### Step 4: Setup Precommit with git
 ```precommit install```
 
-### Setp 5: Configure your .env file
+### Step 5: Configure your .env file
 * Create a .env file at the root directory. Copy and paste the configuration fields from .env.example
 * Fill up the configuration fields with your own credentials
 
-### Setp 5: Run the Application
+### Step 5: Run the Application
 ```poetry run app```
 
 
@@ -156,3 +156,9 @@ Vessel module contains 3 files:
 * database.py file: this file contains all the db connection method and return a db connection object
 * service.py file: this file contains business logic related stuff. This holds methods for querying db tables, fetching data and adding business logic to them to provide required output
 * router.py file: this file contains the router endpoints (for now there is one named '/vessel/' which return total number of vessels)
+
+
+# About Git Commit
+1. when you add and commit git changes the linters in the pre-commit will check and find errors.
+2. if any errors are found the linters will automatically fix those but the commit will not done.
+3. you have to again add and commit the changes for a successful commit.
