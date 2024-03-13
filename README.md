@@ -58,7 +58,13 @@ This project is setup with Python Packaging and Dependency Manager [Poetry](http
 
 ### Setp 3: Install Project Dependencies
 ```poetry install```
+
 ### Setp 4: Setup Precommit with git
 ```precommit install```
+
+### Setp 5: Configure your .env file
+* Create a .env file at the root directory. Copy and paste the configuration fields from .env.example
+* Fill up the configuration fields with your own credentials
+
 ### Setp 5: Run the Application
 ```poetry run app```
