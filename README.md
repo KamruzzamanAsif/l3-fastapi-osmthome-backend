@@ -41,28 +41,53 @@ l3-fastapi-osmthome-backend
 │   │   ├── exceptions.py
 │   │   ├── service.py # business logics & core methods
 │   │   └── utils.py # utility methods
-|   └── vessel
-│   │   ├── router.py
-│   │   ├── config.py # local configs
-│   │   ├── database.py # db connection
-│   │   ├── service.py # business logics & core methods
-│   └── template-package
-│   │   ├── router.py
-│   │   ├── schemas.py
-│   │   ├── models.py
-│   │   ├── dependencies.py
-│   │   ├── constants.py
-│   │   ├── exceptions.py
-│   │   ├── service.py
-│   │   └── utils.py
-│   ├── config.py  # global configs
-│   ├── models.py  # global models
-│   ├── exceptions.py  # global exceptions
-│   ├── database.py  # global db connection related stuff
+|   ├── hseq
+│   │   ├── api     # all api endpoints for this module
+│   │   │ ├── cdi_router.py
+│   │   │ ├── health_safety_router.py
+│   │   │ ├── psc_router.py
+│   │   │ └── sire_router.py
+│   │   ├── service     # business logics & relevant methods
+│   │   │ ├── cdi_service.py
+│   │   │ ├── health_safety_service.py
+│   │   │ ├── psc_service.py
+│   │   │ └── sire_service.py
+│   │   ├── database    # database connection for relevant section
+│   │   │ ├── cdi_database.py
+│   │   │ ├── health_safety_database.py
+│   │   │ ├── psc_database.py
+│   │   │ └── sire_database.py
+│   │   ├── models  # should contain EDMs (entity data models)
+│   │   │ ├── cdi_observations.py
+│   │   │ ├── critical_overdue_jobs.py
+│   │   │ ├── sire_observations.py
+│   │   │ ├── vessel_count.py
+│   │   │ └── watch_list.py
+│   │   ├── config.py   # all configs in this module
+│   │   ├── exceptions.py   # all exceptions in this module
+|   ├── XYZ_MODULE
+│   │   ├── api     # all api endpoints for this module
+│   │   │ ├── a_router.py
+│   │   │ ├── b_router.py
+│   │   ├── service     # business logics & relevant methods
+│   │   │ ├── a_service.py
+│   │   │ ├── b_safety_service.pyy
+│   │   ├── database    # database connection for relevant section
+│   │   │ ├── a_database.py
+│   │   │ ├── b_database.py
+│   │   ├── models  # should contain EDMs (entity data models)
+│   │   │ ├── a_model.py
+│   │   │ ├── b_model.py
+│   │   ├── config.py   # all configs in this module
+│   │   ├── exceptions.py   # all exceptions in this module
+│   ├── config.py   # global configs for entire project
+│   ├── models.py   # global models for entire project
+│   ├── exceptions.py   # global exceptions for entire project
+│   ├── database.py     # global db connection related stuff for entire project
 │   └── main.py
-├── tests/
+├── tests
 │   ├── auth
-│   ├── vessel
+│   ├── hseq
 ├── .env
 ├── .venv
 ├── .pre-commit-config.yaml
@@ -96,39 +121,7 @@ To run the project use this command in your shell/terminal from the root dirctro
 ``` poetry run app ```
 
 ## 5. Src Directory Documentation
-src quick view
-```
-src
-│   ├── auth
-│   │   ├── router.py
-│   │   ├── schemas.py  # pydantic models
-│   │   ├── models.py  # db models
-│   │   ├── dependencies.py
-│   │   ├── config.py  # local configs
-│   │   ├── constants.py
-│   │   ├── exceptions.py
-│   │   ├── service.py # business logics & core methods
-│   │   └── utils.py # utility methods
-|   └── vessel
-│   │   ├── router.py
-│   │   ├── config.py # local configs
-│   │   ├── database.py # db connection
-│   │   ├── service.py # business logics & core methods
-│   └── template-module
-│   │   ├── router.py
-│   │   ├── schemas.py
-│   │   ├── models.py
-│   │   ├── dependencies.py
-│   │   ├── constants.py
-│   │   ├── exceptions.py
-│   │   ├── service.py
-│   │   └── utils.py
-│   ├── config.py  # global configs
-│   ├── models.py  # global models
-│   ├── exceptions.py  # global exceptions
-│   ├── database.py  # global db connection related stuff
-│   └── main.py
-```
+
 > src/main.py
 * this is the main file whre the fastapi application initalizes
 > src/config.py
