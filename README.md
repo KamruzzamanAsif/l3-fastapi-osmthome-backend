@@ -144,3 +144,7 @@ To run the project use this command in your shell/terminal from the root dirctro
 2. if any errors are found the linters will automatically fix those but the commit will not done.
 3. you have to again add and commit the changes for a successful commit.
 4. then you can push the changes to github repository
+
+
+
+jhj
