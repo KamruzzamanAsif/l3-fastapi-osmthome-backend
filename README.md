@@ -1,33 +1,6 @@
-# l3-fastapi-osmthome-backend
-
-
-# Project setup
-This project is setup with Python Packaging and Dependency Manager [Poetry](https://python-poetry.org/)
-
-<br/>
-
-### Step 1: Install Poetry
-```pip install poetry```
-
-### Step 2: Poetry Configurations
-```poetry config virtualenvs.in-project true```
-
-### Step 3: Install Project Dependencies
-```poetry install```
-
-### Step 4: Setup Precommit with git
-```precommit install```
-
-### Step 5: Configure your .env file
-* Create a .env file at the root directory. Copy and paste the configuration fields from .env.example
-* Fill up the configuration fields with your own credentials
-
-### Step 5: Run the Application
-```poetry run app```
-
-
 # Project Documentation
-## 1. Structure
+
+## Structure
 ```
 l3-fastapi-osmthome-backend
 ├── src
@@ -97,9 +70,9 @@ l3-fastapi-osmthome-backend
 ├── README.md
 ```
 
-## 2. Structure Overview
+### Structure Overview
 * l3-fastapi-osmthome-backend is the root directory
-* src contains all the independent modules and global .py files
+* src contains all the independent modules and global python files
 * test directory contains all the test cases for each independent module
 * .env contains all the environment variables
 * .env.example is the skeleton of the .env file
@@ -110,18 +83,7 @@ l3-fastapi-osmthome-backend
 * .gitignore contains the names of the files & directories that are ignored fom git tree
 * README.md contains the project documentation
 
-## 3. How to install a python package?
-To install a python package to the project just follow the command below <br/>
-``` poetry add package-name ``` <br/>
-eg. `poetry add fastapi`
-This will install the python package and automatically update the *pyproject.toml* file.
-
-## 4. How to run the project?
-To run the project use this command in your shell/terminal from the root dirctroy <br/>
-``` poetry run app ```
-
-## 5. Src Directory Documentation
-
+#### Src Directory Overview
 > src/main.py
 * this is the main file whre the fastapi application initalizes
 > src/config.py
@@ -132,26 +94,53 @@ To run the project use this command in your shell/terminal from the root dirctro
 * this file should contain all the the global exceptions that are common to all the independent modules
 > src/database.py
 * this file should contain all the the db connection related stuff that are common to all the independent modules
-
-### Module Overview
-* Each Module is Independent
-* You can add your own modules and implement your own
-* Please follow the template-module structure from the project documentation but it is not strictly necessary to follow the same structure
-* After implementing your own module you must make sure your modules router endpoints are added in src/main.py file otherwise it will not be accessible <br/>
-(To get a quick look how the route end point is added from my vessel module you can see the src/main.py file and src/vessel/route.py file)
-
-### Authentication module (Not implemented yet)
-Authentication module should contain all the authentication related stuffs
-
-### Vessel module
-Vessel module contains 3 files:
-* config.py file: this file contains all the db config related stuff (variables)
-* database.py file: this file contains all the db connection method and return a db connection object
-* service.py file: this file contains business logic related stuff. This holds methods for querying db tables, fetching data and adding business logic to them to provide required output
-* router.py file: this file contains the router endpoints (for now there is one named '/vessel/' which return total number of vessels)
+> src/auth
+* this is authentication module which contains authentication related stuff (see Structure for more information)
+> src/hseq
+* this is hseq module which contains hseq related stuff (see Structure for more information)
 
 
-# About Git Commit
+
+## Project setup
+This project is setup with Python Packaging and Dependency Manager [Poetry](https://python-poetry.org/)
+<br/>
+
+### Step 1: Install Poetry
+To install Poetry see this official [documentation](https://python-poetry.org/docs/#installation) <br>
+
+```pipx install poetry```
+
+### Step 2: Virtual Environment Configurations (Optional)
+If you like to use in porject virtual environment then you can set up like this: <br>
+```poetry config virtualenvs.in-project true```
+
+### Step 3: Install Project Dependencies
+```poetry install```
+
+### Step 4: Setup Precommit with git (For linters and Commit configs)
+```pre-commit install```
+
+### Step 5: Configure your .env file
+* Create a .env file at the root directory. Copy and paste the configuration fields from .env.example
+* Fill up the configuration fields with your own credentials
+
+### Step 5: Run the Application
+```poetry run app```
+
+
+## How to install a python package?
+To install a python package to the project just follow the command below <br/>
+``` poetry add package-name ``` <br/>
+eg. `poetry add fastapi`
+This will install the python package and automatically update the *pyproject.toml* file.
+
+## How to run the project?
+To run the project use this command in your shell/terminal from the root dirctroy <br/>
+``` poetry run app ```
+
+
+## About Git Commit
 1. when you add and commit git changes the linters in the pre-commit will check and find errors.
 2. if any errors are found the linters will automatically fix those but the commit will not done.
 3. you have to again add and commit the changes for a successful commit.
+4. then you can push the changes to github repository
